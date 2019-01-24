@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 @Path("login")
 public class AccountControllerImpl {
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces(MediaType.TEXT_PLAIN)
     public String getMessage() {
 
         return "Login here\n";}

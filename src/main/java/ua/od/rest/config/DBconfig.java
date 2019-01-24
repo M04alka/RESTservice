@@ -27,4 +27,6 @@ public class DBconfig {
     public static final String DB_SCRIPTS_FOLDER = ABSOLUTE_CLASSPATH + dbProperties.getProperty("db.scripts.folder");
   //  public static final String DB_SCRIPT_DELIMITER = ";";
 
+
+
 }

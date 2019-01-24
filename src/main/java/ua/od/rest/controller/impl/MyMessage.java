@@ -1,4 +1,4 @@
-package ua.od.rest;
+package ua.od.rest.controller.impl;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -14,4 +14,7 @@ public class MyMessage {
 
         return "My message\n";
     }
+
+
+
 }

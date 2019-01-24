@@ -36,10 +36,10 @@ public class AppConfig {
     private Handler getServletHandler() {
         ServletContextHandler servletsHandler = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
         servletsHandler.setContextPath("/");
-        servletsHandler.addServlet(new ServletHolder(new ServletContainer(getResourceConfig())), "/rest/*");
+        servletsHandler.addServlet(new ServletHolder(new ServletContainer(getResourceConfig())), "/ua.od.rest/*");
         FilterHolder holder = new FilterHolder(new CrossOriginFilter());
-        holder.setInitParameter(CrossOriginFilter.ALLOWED_METHODS_PARAM, "GET,POST,HEAD,OPTIONS");
-        servletsHandler.addFilter(holder, "/rest/*", EnumSet.of(DispatcherType.REQUEST));
+       // holder.setInitParameter(CrossOriginFilter.ALLOWED_METHODS_PARAM, "GET,POST,HEAD,OPTIONS");
+       // servletsHandler.addFilter(holder, "/rest/*", EnumSet.of(DispatcherType.REQUEST));
         return servletsHandler;
     }
 
@@ -49,17 +49,17 @@ public class AppConfig {
             public void handle(String target, Request baseRequest, HttpServletRequest request,
                                HttpServletResponse response) throws IOException, ServletException {
 
-                RequestDispatcher view = request.getRequestDispatcher("login.html");
+                RequestDispatcher view = request.getRequestDispatcher("resource/webapp/login.html");
             }
         };
-        resourceHandler.setWelcomeFiles(new String[]{"login.html"});
+        resourceHandler.setWelcomeFiles(new String[]{"resource/webapp/login.html"});
         resourceHandler.setBaseResource(Resource.newClassPathResource("/webapp"));
         return resourceHandler;
     }
 
     private ResourceConfig getResourceConfig() {
         return new ResourceConfig() {{
-            packages("ua/od/rest");
+            packages("ua.od.rest");
             register(new AbstractBinder() {
                 protected void configure () {
                     bindAsContract(AccountControllerImpl.class).to(AccountController.class);
