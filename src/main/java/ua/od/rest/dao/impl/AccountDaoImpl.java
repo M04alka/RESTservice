@@ -16,4 +16,13 @@ public class AccountDaoImpl implements AccountDao {
     }
 
 
+    @Override
+    public AccountDao registerAccount() {
+        return null;
+    }
+
+    @Override
+    public AccountDao logIntoAccount() {
+        return null;
+    }
 }

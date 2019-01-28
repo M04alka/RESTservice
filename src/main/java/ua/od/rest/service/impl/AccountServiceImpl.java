@@ -1,4 +1,5 @@
 package ua.od.rest.service.impl;
 
-public class AccountServiceImpl {
+public class AccountServiceImpl  {
+
 }

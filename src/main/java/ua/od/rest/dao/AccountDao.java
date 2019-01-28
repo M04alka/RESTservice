@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface AccountDao {
 
-    AccountEntity getAllAccount();
+    AccountDao  registerAccount();
+    AccountDao  logIntoAccount();
 
 }
