@@ -2,6 +2,7 @@ package ua.od.rest.controller.impl;
 
 import ua.od.rest.controller.AccountController;
 import ua.od.rest.dto.AccountDto;
+import ua.od.rest.dto.NewAccountDto;
 import ua.od.rest.service.AccountService;
 
 import javax.inject.Inject;
@@ -29,8 +30,8 @@ public class AccountControllerImpl implements AccountController {
     @Path("new")
     @POST
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response createNewUser(AccountDto user) {
-        accountService.loginUser(user);
+    public Response createNewUser(NewAccountDto user) {
+        accountService.createNewUser(user);
         return Response.status(201).build();
     }
 

@@ -50,7 +50,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public String addNewOrder(NewOrderEntity order) {
-        String newOrder = SQLHelper.prepareStatement(ADD_NEW_ORDER, preparedStatement -> {
+            SQLHelper.prepareStatement(ADD_NEW_ORDER, preparedStatement -> {
             preparedStatement.setInt(1, order.getAccountId());
             preparedStatement.setString(2, order.getCustomer());
             preparedStatement.setInt(3, order.getAlcoholId());
