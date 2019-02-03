@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AccountDao {
 
-    String  registerAccount(AccountEntity accountEntity);
+    String  createNewAccount(AccountEntity accountEntity);
     String  logIntoAccount(AccountEntity accountEntity);
 
 

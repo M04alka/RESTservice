@@ -2,8 +2,8 @@ package ua.od.rest.service.impl;
 
 import ua.od.rest.dao.OrderDao;
 import ua.od.rest.dto.AccountOrdersDto;
-import ua.od.rest.dto.OrderDto;
-import ua.od.rest.entity.OrderEntity;
+import ua.od.rest.dto.NewOrderDto;
+import ua.od.rest.entity.NewOrderEntity;
 import ua.od.rest.service.OrderService;
 
 import java.util.ArrayList;
@@ -30,11 +30,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public String addNewOrder(OrderDto order) {
-        return orderDao.addNewOrder(new OrderEntity() {{
-          //  setId(order.getId());
+    public String addNewOrder(NewOrderDto order, Integer accountId) {
+        return orderDao.addNewOrder(new NewOrderEntity() {{
+            setAccountId(accountId);
             setCustomer(order.getCustomer());
-            setAlcoholName(order.getAlcoholName());
+            setAlcoholId(order.getAlcoholId());
             setCount(order.getCount());
             setPrice(order.getPrice());
         }});

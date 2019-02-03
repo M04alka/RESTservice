@@ -2,7 +2,7 @@ package ua.od.rest.controller.impl;
 
 import ua.od.rest.controller.OrderController;
 import ua.od.rest.dto.AccountOrdersDto;
-import ua.od.rest.dto.OrderDto;
+import ua.od.rest.dto.NewOrderDto;
 import ua.od.rest.service.OrderService;
 
 import javax.ws.rs.*;
@@ -27,8 +27,8 @@ public class OrderControllerImpl implements OrderController {
     @POST
     @Path("{accountId}/new")
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-    public Response addNewOrder(OrderDto order) {
-        orderService.addNewOrder(order);
+    public Response addNewOrder(NewOrderDto order, @PathParam("accountId") Integer accountId) {
+        orderService.addNewOrder(order,accountId);
         return Response.status(201).build();
     }
 }

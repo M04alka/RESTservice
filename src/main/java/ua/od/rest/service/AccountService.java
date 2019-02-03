@@ -5,7 +5,7 @@ import ua.od.rest.entity.AccountEntity;
 
 public interface AccountService {
 
-    String verify(AccountDto account);
-    String newUser(AccountDto accountDto);
+    String loginUser(AccountDto account);
+    String createNewUser(AccountDto accountDto);
 
 }

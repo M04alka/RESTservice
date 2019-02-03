@@ -15,8 +15,8 @@ public class AccountServiceImpl implements AccountService {
 
 
     @Override
-    public String verify(AccountDto account) {
-        return accountDao.registerAccount(new AccountEntity() {{
+    public String loginUser(AccountDto account) {
+        return accountDao.createNewAccount(new AccountEntity() {{
             setName(account.getName());
             setPassword(account.getPassword());
             setToken(UUID.randomUUID().toString());
@@ -24,8 +24,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public String newUser(AccountDto accountDto) {
-        return accountDao.registerAccount(new AccountEntity() {{
+    public String createNewUser(AccountDto accountDto) {
+        return accountDao.createNewAccount(new AccountEntity() {{
             setName(accountDto.getName());
             setPassword(accountDto.getPassword());
             setToken(UUID.randomUUID().toString());

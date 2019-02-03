@@ -1,12 +1,11 @@
 package ua.od.rest.dao;
+import ua.od.rest.entity.AccountOrdersEntity;
+import ua.od.rest.entity.NewOrderEntity;
 
-import ua.od.rest.entity.OrderEntity;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public interface OrderDao {
 
-    List<OrderEntity> getAllOrders(Integer accountId);
-    String addNewOrder(OrderEntity order);
+    List<AccountOrdersEntity> getAllOrders(Integer accountId);
+    String addNewOrder(NewOrderEntity order);
 }
