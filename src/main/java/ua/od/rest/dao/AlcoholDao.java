@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface AlcoholDao {
 
-    List<AlcoholEntity> getAllAlcohol() throws SQLException;
+    List<AlcoholEntity> getAllAlcohol();
 
 }

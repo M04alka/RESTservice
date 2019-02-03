@@ -25,8 +25,4 @@ public class DBconfig {
     public static final String DB_CONNECTION_URL = DB_HOST + USER_PASSWORD;
     public static final String DB_DATABASE_URL = DB_HOST + DB_NAME + USER_PASSWORD;
     public static final String DB_SCRIPTS_FOLDER = ABSOLUTE_CLASSPATH + dbProperties.getProperty("db.scripts.folder");
-  //  public static final String DB_SCRIPT_DELIMITER = ";";
-
-
-
 }

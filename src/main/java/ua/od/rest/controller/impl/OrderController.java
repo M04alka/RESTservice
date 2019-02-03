@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("msg")
-public class MyMessage {
+public class OrderController {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

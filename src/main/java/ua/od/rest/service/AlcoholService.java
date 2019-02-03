@@ -6,5 +6,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface AlcoholService {
-    List<AlcoholDto> getAllAlcoholList() throws SQLException;
+    List<AlcoholDto> getAllAlcoholList();
 }

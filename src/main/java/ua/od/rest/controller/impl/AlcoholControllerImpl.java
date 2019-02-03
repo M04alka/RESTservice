@@ -9,7 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.sql.SQLException;
+
 import java.util.List;
 @Path("/bar")
 public class AlcoholControllerImpl implements AlcoholController {
@@ -17,12 +17,10 @@ public class AlcoholControllerImpl implements AlcoholController {
     @Inject
     public AlcoholService alcoholService;
 
-
-
     @GET
     @Path("list")
-    @Produces(MediaType.TEXT_PLAIN)
-    public List<AlcoholDto> getAllUpgradeList() throws SQLException {
+    @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+    public List<AlcoholDto> getAllAlcohol() {
         List<AlcoholDto> alcoholList = alcoholService.getAllAlcoholList();
         return alcoholList;
     }

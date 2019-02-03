@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <div>
-        <form action = "login" method = "POST">
-            First name:<br>
-            <input type="text" name="firstname"><br>
-            Last name:<br>
-            <input type="text" name="lastname">
-            <input type="submit">
-        </form>
+    <div class="login-form">
+        <h1 class="game-logo-font" style="margin-bottom: 30px">Card War Game</h1>
+        <input id="name" type="text" class="game-input" placeholder="Name"><br>
+        <input id="password" type="password" class="game-input" placeholder="Password"><br>
+        <button id="login" class="game-button" onclick="login()">Login</button>
+        <button id="new_user" class="game-button" onclick="createNewUser()">Create New User</button>
+        <button id="logout" class="game-button" onclick="logout()">Logout</button>
+        <button id="lets_play" onclick="static.roomsPage()"><b class="glow-effect">Let's Play!</b></button>
+        <button style="background-color: #7cff03; color: #333333" onclick="static.testPage()">Developer Tests</button>
     </div>
+
 
 </head>
 <body>
