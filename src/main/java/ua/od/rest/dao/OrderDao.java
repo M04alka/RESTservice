@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface OrderDao {
 
-    List<OrderEntity> getAllOrders();
+    List<OrderEntity> getAllOrders(Integer accountId);
     String addNewOrder(OrderEntity order);
 }

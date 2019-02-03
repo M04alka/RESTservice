@@ -2,6 +2,7 @@ package ua.od.rest.dao.impl;
 
 import ua.od.rest.dao.Helper.SQLHelper;
 import ua.od.rest.dao.OrderDao;
+import ua.od.rest.entity.AccountOrdersEntity;
 import ua.od.rest.entity.OrderEntity;
 
 import java.sql.ResultSet;
@@ -20,16 +21,16 @@ public class OrderDaoImpl implements OrderDao {
             "Inner Join Orders \n" +
             "ON Account.Order_id = Orders.id \n" +
             "Inner Join Alcohol \n" +
-            "ON Orders.Alcohol_id = Alcohol.id;";
+            "ON Orders.Alcohol_id = Alcohol.id \n" +
+            "Where Account.id =?;";
 
     @Override
-    public List<OrderEntity> getAllOrders()  {
+    public List<OrderEntity> getAllOrders(Integer accountId)  {
         return SQLHelper.prepareStatement(GET_ALL_ORDERS, statement ->{
             ResultSet resultSet = statement.executeQuery();
-            List<OrderEntity> ordersList = new ArrayList<>();
+            List<AccountOrdersEntity> ordersList = new ArrayList<>();
             while(resultSet.next()){
-                ordersList.add(new OrderEntity(){{
-                    setId(resultSet.getInt("Account_id"));
+                ordersList.add(new AccountOrdersEntity(){{
                     setCustomer(resultSet.getString("Customer"));
                     setAlcoholName(resultSet.getString("Alcohol_name"));
                     setCount(resultSet.getInt("Count"));
@@ -50,7 +51,7 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public String addNewOrder(OrderEntity order) {
         String newOrder = SQLHelper.prepareStatement(ADD_NEW_ORDER, preparedStatement -> {
-            preparedStatement.setInt(1, order.getId());
+            //preparedStatement.setInt(1, order.getId());
             preparedStatement.setString(2, order.getCustomer());
             preparedStatement.setString(3, order.getAlcoholName());
             preparedStatement.setInt(4, order.getCount());

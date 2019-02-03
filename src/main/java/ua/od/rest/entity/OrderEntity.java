@@ -2,18 +2,16 @@ package ua.od.rest.entity;
 
 public class OrderEntity {
 
-    private Integer id;
+    private Integer accountId;
     private String Customer;
     private String AlcoholName;
     private Integer Count;
     private Float Price;
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getAccountId() { return  accountId; }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAccountId(Integer id) {
+        this. accountId = id;
     }
 
     public String getCustomer() {
@@ -27,7 +25,6 @@ public class OrderEntity {
     public String getAlcoholName() {
         return AlcoholName;
     }
-
     public void setAlcoholName(String alcoholName) {
         AlcoholName = alcoholName;
     }

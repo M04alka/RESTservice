@@ -4,8 +4,9 @@ public class OrderDto {
 
     private Integer id;
     private String Customer;
-    private Integer Alcohol_id;
+    private String AlcoholName;
     private Integer Count;
+    private Float Price;
 
     public Integer getId() {
         return id;
@@ -23,12 +24,12 @@ public class OrderDto {
         Customer = customer;
     }
 
-    public Integer getAlcohol_id() {
-        return Alcohol_id;
+    public String getAlcoholName() {
+        return AlcoholName;
     }
 
-    public void setAlcohol_id(Integer alcohol_id) {
-        Alcohol_id = alcohol_id;
+    public void setAlcoholName(String  alcoholName) {
+        AlcoholName = alcoholName;
     }
 
     public Integer getCount() {
@@ -37,5 +38,13 @@ public class OrderDto {
 
     public void setCount(Integer count) {
         Count = count;
+    }
+
+    public Float getPrice() {
+        return Price;
+    }
+
+    public void setPrice(Float price) {
+        Price = price;
     }
 }
